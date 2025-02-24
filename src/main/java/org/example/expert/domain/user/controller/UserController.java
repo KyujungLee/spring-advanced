@@ -1,5 +1,6 @@
 package org.example.expert.domain.user.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.example.expert.domain.common.annotation.Auth;
 import org.example.expert.domain.common.dto.AuthUser;
@@ -20,8 +21,15 @@ public class UserController {
         return ResponseEntity.ok(userService.getUser(userId));
     }
 
+    /**
+     * Lv.1-3 비밀번호 요청 Dto 에 @Valid 어노테이션 추가하여, 검증 수행하도록 작성.
+     */
+
     @PutMapping("/users")
-    public void changePassword(@Auth AuthUser authUser, @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
+    public void changePassword(
+            @Auth AuthUser authUser,
+            @Valid  @RequestBody UserChangePasswordRequest userChangePasswordRequest
+    ) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
     }
 }
