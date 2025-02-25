@@ -47,9 +47,9 @@
 > 
 > **파일 위치**
 > 
-> `org.example.expert.domain.todo.repository.TodoRepository`
+> `package org.example.expert.domain.todo.repository.TodoRepository`
 >
-> `org.example.expert.domain.todo.service.TodoService`
+> `package org.example.expert.domain.todo.service.TodoService`
 1. 스프링 프레임워크 에서 제공하는 @EntityGraph 를 사용하여 자바의 언어로만 쿼리관계를 작성.
 2. JPQL에서 제공하는 SQL과 유사한 문법이 눈에 보이지 않으므로, 가독성과 유지 보수성 향상.
 
@@ -65,3 +65,27 @@
 3. matches 매서드에 들어가는 매개변수의 순서가 틀림. (즉 상태값 false를 반환할 것으로 예상)
 4. 상태값을 올바르게 체크하도록 then 의 assertTrue 매서드를 assertFalse로 바꿈.
 - 시크릿 키 코드가 있는 설정파일(application.yml)이 git 에 업로드 되지 않도록 gitignore 설정 추가
+
+
+## Lv.3-2 테스트 코드 연습 (3문제)
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-3-2-1a5970eb707b8091ba98ed1eb08a0920
+> 
+> **파일 위치**
+> 
+>`package org.example.expert.domain.manager.service.ManagerServiceTest`
+>
+>`package org.example.expert.domain.manager.service.CommentServiceTest`
+> 
+>`package org.example.expert.domain.manager.service.ManagerServcice`
+### [ Lv.3-2-1 ]
+1. 매서드명을 IRE를 던지는 것으로 수정.
+2. 테스트 목적에 맞게, 예외 메시지가 동일한지 확인하는 테스트코드 삭제.
+3. 상태값도 필요 없으므로 삭제.
+
+### [ Lv.3-2-2 ]
+1. 매서드명을 IRE를 던지는 것으로 수정.
+2. 테스트코드의 예외를 실제 코드에서 발생하는 예외와 일치시킴.
+
+### [ Lv.3-2-3 ]
+1. 서비스 로직에 todo의 user 필드 null 체크 코드 추가.
+2. 그에 맞는 동일한 예외메시지를 테스트코드에 작성.

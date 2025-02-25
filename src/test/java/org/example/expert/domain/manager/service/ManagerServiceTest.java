@@ -39,14 +39,19 @@ class ManagerServiceTest {
     private ManagerService managerService;
 
     @Test
-    public void manager_목록_조회_시_Todo가_없다면_NPE_에러를_던진다() {
+    /**
+     * Lv.3-2-1 던지는 예외의 이름에 맞게 매서드명 수정
+     */
+    public void manager_목록_조회_시_Todo가_없다면_IRE_예외를_던진다() {
         // given
         long todoId = 1L;
         given(todoRepository.findById(todoId)).willReturn(Optional.empty());
 
         // when & then
-        InvalidRequestException exception = assertThrows(InvalidRequestException.class, () -> managerService.getManagers(todoId));
-        assertEquals("Manager not found", exception.getMessage());
+        /**
+         * Lv.3-2-1 테스트 목적에 맞게 IRE 예외를 던지는지 확인.
+         */
+        assertThrows(InvalidRequestException.class, () -> managerService.getManagers(todoId));
     }
 
     @Test
@@ -68,7 +73,10 @@ class ManagerServiceTest {
             managerService.saveManager(authUser, todoId, managerSaveRequest)
         );
 
-        assertEquals("담당자를 등록하려고 하는 유저가 일정을 만든 유저가 유효하지 않습니다.", exception.getMessage());
+        /**
+         * Lv.3-2-3 서비스 로직의 수정된 코드에 따라 적절하게 수정.
+         */
+        assertEquals("일정을 만든 유저가 유효하지 않습니다.", exception.getMessage());
     }
 
     @Test // 테스트코드 샘플
