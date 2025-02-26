@@ -89,3 +89,24 @@
 ### [ Lv.3-2-3 ]
 1. 서비스 로직에 todo의 user 필드 null 체크 코드 추가.
 2. 그에 맞는 동일한 예외메시지를 테스트코드에 작성.
+
+
+## Lv.4 로깅 구현 (AOP)
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-4-AOP-1a5970eb707b80f6a8a1e80f9c459d43?pvs=74
+> 
+> **파일 위치**
+> 
+>`package org.example.expert.config.BodyCachingFilter`
+> 
+>`package org.example.expert.config.CachedBodyHttpServletRequest`
+> 
+>`package org.example.expert.config.FilterConfig`
+> 
+>`package org.example.expert.config.LoggingAspect`
+1. 기존 jwtFilter에서 이미 인증/인가를 진행 하였으므로, Aop에서는 어드민 권한 요청에 대해서만 로깅 작성.
+2. 로깅에 요청바디/응답바디가 사용됨. 하지만 요청/응답 바디를 한번 읽으면 다시는 읽을 수 없게 되버려, 로깅 이후의 요청이나 응답값이 다음 단계에 도달하지 못함.
+3. 이에 대한 방안으로 필터에서 요청/응답 값을 캐싱 처리하여 재사용하는 방식을 선택.
+4. CachedBodyHttpServletRequest 에서는 요청바디를 캐싱하여 값을 저장하는 기능을 함.
+5. BodyCachingFilter 에서는 위 캐싱 클래스를 사용하여 요청/응답바디 캐싱
+6. 생성한 필터를 FilterConfig 에 등록
+7. LoggingAspect 에서 로깅처리
