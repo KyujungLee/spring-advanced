@@ -110,3 +110,18 @@
 5. BodyCachingFilter 에서는 위 캐싱 클래스를 사용하여 요청/응답바디 캐싱
 6. 생성한 필터를 FilterConfig 에 등록
 7. LoggingAspect 에서 로깅처리
+
+
+## Lv.5 임의로 정의한 문제 해결 (가독성 개선)
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-5-1a5970eb707b80dea502fc1875810c01?pvs=74
+> 
+> **파일 위치**
+> 
+> `package org.example.expert.domain.comment.repository.CommentRepository`
+>
+> `package org.example.expert.domain.todo.repository.TodoRepository`
+>
+> `package org.example.expert.domain.Manager.repository.ManagerRepository`
+1. 사용하지 않는 메서드 제거
+2. @query 를 @EntityGraph 로 변경
+3. 매서드 명을 명확하게 변경

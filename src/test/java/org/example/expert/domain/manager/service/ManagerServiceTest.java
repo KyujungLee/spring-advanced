@@ -91,7 +91,7 @@ class ManagerServiceTest {
         List<Manager> managerList = List.of(mockManager);
 
         given(todoRepository.findById(todoId)).willReturn(Optional.of(todo));
-        given(managerRepository.findByTodoIdWithUser(todoId)).willReturn(managerList);
+        given(managerRepository.findManagersByTodoId(todoId)).willReturn(managerList);
 
         // when
         List<ManagerResponse> managerResponses = managerService.getManagers(todoId);
