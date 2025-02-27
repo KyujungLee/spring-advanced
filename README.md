@@ -137,3 +137,16 @@
 > `package org.example.expert.config.LoggingAspect`
 1. 기존에는 package org.example.expert.config.CachedBodyHttpServletRequest라는 별도의 커스텀 클래스에서 요청바디를 캐싱처리하고 있었음. 
 2. 기존 요청바디의 캐싱을 진행하던 클래스를 삭제하고, ContentCachingRequestWrapper를 사용하여 AOP 수정.
+
+
+## Lv.6 테스트 커버리지 (테스트 코드 작성 및 확인)
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-6-README-md-1a6970eb707b804399afc00b833a64b4?pvs=74
+> 
+> **파일 위치**
+> 
+> `package org.example.expert.domain.comment.service.CommentServiceTest`
+1. 댓글 서비스의 댓글목록조회 매서드를 선택.
+2. 테스트 코드 작성 및 진행.
+3. 원본코드의 커버 범위 및 테스트 커버리지 확인.
+### 테스트 커버리지 확인
+![img_1.png](img_1.png)
