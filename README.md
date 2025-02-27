@@ -150,3 +150,12 @@
 3. 원본코드의 커버 범위 및 테스트 커버리지 확인.
 ### 테스트 커버리지 확인
 ![img_1.png](img_1.png)
+
+
+## Lv.4 추가수정 - 캐싱 필터 Pattern 경로 수정
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-4-Pattern-1a7970eb707b80628570f04aabca4412?pvs=74
+> 
+> **파일 위치**
+> 
+> `package org.example.expert.config.FilterConfig`
+1. 하위경로 매핑 스타일에 따른 캐싱필터 경로 수정 

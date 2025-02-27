@@ -29,7 +29,7 @@ public class FilterConfig {
         FilterRegistrationBean<BodyCachingFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new BodyCachingFilter());
         registrationBean.setOrder(2);
-        registrationBean.addUrlPatterns("/admin/**"); // Admin 요청에서만 RequestBody 캐싱
+        registrationBean.addUrlPatterns("/admin/*"); // Admin 요청에서만 RequestBody 캐싱
 
         return registrationBean;
     }
