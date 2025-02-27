@@ -125,3 +125,15 @@
 1. 사용하지 않는 메서드 제거
 2. @query 를 @EntityGraph 로 변경
 3. 매서드 명을 명확하게 변경
+
+
+## Lv.4 수정 - 스프링 제공기능인 ContentCachingRequestWrapper 사용
+>**해결 과정** : https://dandy-tiger-0ef.notion.site/Lv-4-ContentCachingRequestWrapper-1a7970eb707b80eaa524f95077eb34bd?pvs=74
+> 
+> **파일 위치**
+> 
+> `package org.example.expert.config.BodyCachingFilter`
+>
+> `package org.example.expert.config.LoggingAspect`
+1. 기존에는 package org.example.expert.config.CachedBodyHttpServletRequest라는 별도의 커스텀 클래스에서 요청바디를 캐싱처리하고 있었음. 
+2. 기존 요청바디의 캐싱을 진행하던 클래스를 삭제하고, ContentCachingRequestWrapper를 사용하여 AOP 수정.
